@@ -1,0 +1,75 @@
+<div class="container">
+    <div class="row mt-2">
+      <div class="col-md-9">
+        <h3>Customer Detail</h3>
+      </div>
+      <div class="col-md-3">
+        <button class="btn-success btn-lg " type="button" (click)="onListCustomer()">Customer Details List</button>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="card customerCard">
+        <div class="card-body">
+          <!-- for customer details -->
+          <form [formGroup]="customerDetail" (ngSubmit)="onAddDetail()">
+            <div class="row">
+              <!-- input for customer name -->
+              <div class="form-group">
+                <label>Enter Name:</label>
+                <input class="form-control" type="text" placeholder="enter name" formControlName="name">
+                <!-- validation for customer name -->
+                <small *ngIf="!customerDetail.get('name').valid && customerDetail.get('name').touched"
+                  class="text-danger">Please enter customer name</small>
+              </div>
+              <!-- input for customer last name -->
+              <div class="form-group">
+                <label>Enter Last Name:</label>
+                <input class="form-control" type="text" placeholder="enter last name" formControlName="last_name">
+                <!-- validation for last name -->
+                <small *ngIf="!customerDetail.get('last_name').valid && customerDetail.get('last_name').touched"
+                  class="text-danger">Please enter customer last name</small>
+              </div>
+              <!-- input for customer phone no. -->
+              <div class="form-group">
+                <label>Enter Phone No:</label>
+                <input class="form-control" type="text" placeholder="enter phone no" formControlName="phone">
+                <!-- validation for phone no. -->
+                <small *ngIf="!customerDetail.get('phone').valid && customerDetail.get('phone').touched"
+                  class="text-danger">Please enter customer phone no</small>
+              </div>
+              <!-- input for customer profile -->
+              <div class="form-group">
+                <label>Enter Logo:</label>
+                <input class="form-control" type="file" accept=".png,.jpg" (change)="onImageSelected($event)" formControlName="logo">
+                <!-- validation for customer logo -->
+                <small *ngIf="!customerDetail.get('logo').valid && customerDetail.get('logo').touched"
+                  class="text-danger">Please enter customer shop logo</small>
+              </div>
+              <!-- input for customer email -->
+              <div class="form-group">
+                <label>Enter Email:</label>
+                <input class="form-control" type="text" placeholder="enter email" formControlName="email">
+                <!-- validation for customer email -->
+                <small *ngIf="!customerDetail.get('email').valid && customerDetail.get('email').touched"
+                  class="text-danger">Please enter customer email</small>
+              </div>
+              <!-- input for customer password -->
+              <div class="form-group">
+                <label>Enter Password:</label>
+                <input class="form-control" type="password" placeholder="enter password" formControlName="password">
+                <!-- validation for customer name -->
+                <small *ngIf="!customerDetail.get('password').valid && customerDetail.get('password').touched"
+                  class="text-danger">Please enter customer password</small>
+              </div>
+              <!-- button will be clicked customer information added -->
+              <div class="form-group">
+                <button class="btn btn-primary mt-2 m-1" type="submit" [disabled]="!customerDetail.valid">Add Customer
+                  Information</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+</div>
