@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'groceryShopManagement'`, () => {
+  it(`should have as title 'googleLogin'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('groceryShopManagement');
+    expect(app.title).toEqual('googleLogin');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('groceryShopManagement app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('googleLogin app is running!');
   });
 });
